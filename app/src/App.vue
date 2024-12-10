@@ -2,9 +2,13 @@
 import { ref, computed } from 'vue'
 
 const player = ref('X')
-const board = ref(['', '', ''], ['', '', ''], ['', '', ''])
+const board = ref([
+  ['', '', ''],
+  ['', '', ''],
+  ['', '', '']
+])
 
-const CalculateWinner = (squares) => {
+const calculateWinner = (squares) => {
   const lines = [
     [0, 1, 2],
     [3, 4, 5],
@@ -24,23 +28,21 @@ const CalculateWinner = (squares) => {
   return null
 }
 
-const winner = computed(() => CalculateWinner(board.value.flat()))
+const winner = computed(() => calculateWinner(board.value.flat()))
 
 const makeMove = (x, y) => {
-  if (winner.value) return
-
-  if (board.value[x][y] !== '') return
+  if (winner.value || board.value[x][y] !== '') return
 
   board.value[x][y] = player.value
 
-  player.value = player.value === 'x' ? 'o' : 'x'
+  player.value = player.value === 'X' ? 'O' : 'X'
 }
 
-const ResetGame = () => {
+const resetGame = () => {
   board.value = [
     ['', '', ''],
     ['', '', ''],
-    ['', '', ''],
+    ['', '', '']
   ]
   player.value = 'X'
 }
@@ -48,18 +50,35 @@ const ResetGame = () => {
 
 <template>
   <main class="pt-8 text-center bg-gray-800 min-h-screen">
-    <h1 class="mb-8 text-3xl font-bold uppercase">Tris</h1>
+    <h1 class="mb-8 text-3xl font-bold uppercase">Tic Tac Toe (Tris)</h1>
 
     <h3 class="text-xl mb-4">Player {{ player }}'s turn</h3>
 
     <div class="flex flex-col items-center mb-8">
       <div v-for="(row, x) in board" :key="x" class="flex">
-        <div v-for="(cell,y) in row">
-          </div>
+        <div
+          v-for="(cell, y) in row"
+          :key="y"
+          @click="() => makeMove(x, y)"
+          :class="['border', 'border-white', 'w-20', 'h-20', 'hover:bg-gray-700', 'flex', 'items-center', 'justify-center', 'material-icons-outlined', 'text-4xl', 'cursor-pointer', cell === 'X' ? 'text-pink-500' : 'text-blue-500']"
+        >
+          {{ cell === 'X' ? 'close' : cell === 'O' ? 'circle' : '' }}
         </div>
+      </div>
     </div>
+
+    <h2 v-if="winner" class="text-6xl font-bold mb-8">Player '{{ winner }}' wins!</h2>
+    <button
+      @click="resetGame"
+      class="px-4 py-2 bg-pink-400 rounded uppercase font-bold hover:bg-pink-600 duration-300"
+    >
+      Reset Game
+    </button>
   </main>
 </template>
 
 <style>
+.material-icons-outlined::before {
+  font-family: 'Material Icons Outlined';
+}
 </style>
