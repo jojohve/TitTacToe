@@ -52,7 +52,7 @@ const resetGame = () => {
   <main class="pt-8 text-center bg-gray-800 min-h-screen">
     <h1 class="mb-8 text-3xl font-bold uppercase">Tic Tac Toe (Tris)</h1>
 
-    <h3 class="text-xl mb-4">Player {{ player }}'s turn</h3>
+    <h3 class="text-xl mb-4">Turno di:  {{ player }}</h3>
 
     <div class="flex flex-col items-center mb-8">
       <div v-for="(row, x) in board" :key="x" class="flex">
@@ -67,7 +67,7 @@ const resetGame = () => {
       </div>
     </div>
 
-    <h2 v-if="winner" class="text-6xl font-bold mb-8">Player '{{ winner }}' wins!</h2>
+    <h2 v-if="winner" class="text-6xl font-bold mb-8">Giocatore '{{ winner }}' vince!</h2>
     <button
       @click="resetGame"
       class="px-4 py-2 bg-pink-400 rounded uppercase font-bold hover:bg-pink-600 duration-300"
