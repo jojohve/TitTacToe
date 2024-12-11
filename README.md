@@ -11,5 +11,5 @@ e il primo che riesce a allineare tre dei propri simboli (X o O) in una riga, co
 - Utilizzo di Vue.js per la gestione dello stato
 - Stili moderni grazie a Tailwind CSS
   
-## Link
-...
+## Link per provare il gioco (in due è meglio!)
+https://tictactoe-tris-vue-js.netlify.app/
