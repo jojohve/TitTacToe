@@ -1,4 +1,8 @@
 [build]
-  base = "app"  # Aggiungi questa linea se la tua app è nella cartella app
-  publish = "app/dist"
   command = "npm run build"
+  publish = "app/dist"
+
+[dev]
+  framework = "#custom"
+  command = "npm run build"
+  port = 3000
