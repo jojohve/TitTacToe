@@ -14,4 +14,7 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     },
   },
+  build: {
+    outDir: 'app/dist',  // Aggiungi questa riga per configurare la cartella di destinazione
+  },
 });
