@@ -14,7 +14,7 @@ export default defineConfig({
     },
   },
   build: {
-    outDir: 'app/dist',
+    outDir: 'dist',  // Assicurati che sia configurato per creare la cartella dist
     rollupOptions: {
       output: {
         assetFileNames: 'assets/[name]-[hash][extname]',
