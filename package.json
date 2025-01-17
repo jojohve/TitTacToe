@@ -11,6 +11,7 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "node": "^22.13.0",
     "tictactoe-tris-vue-js": "file:",
     "vue": "^3.5.13"
   },
