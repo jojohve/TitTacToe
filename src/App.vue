@@ -89,10 +89,3 @@ const resetGame = () => {
     </button>
   </main>
 </template>
-
-<style>
-.material-icons-outlined::before {
-  font-family: 'Material Icons Outlined';
-  /* Rimuovi eventuali selettori errati qui */
-}
-</style>
