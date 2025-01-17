@@ -2,5 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
--webkit-font-smoothing: antialiased;
--moz-osx-font-smoothing: grayscale; 
+/* Applicazione globale del font-smoothing */
+body {
+  -webkit-font-smoothing: antialiased; /* Per Webkit */
+  -moz-osx-font-smoothing: grayscale; /* Per macOS su Firefox */
+}
