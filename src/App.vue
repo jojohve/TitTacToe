@@ -5,7 +5,7 @@ const player = ref('X')
 const board = ref([
   ['', '', ''],
   ['', '', ''],
-  ['', '', '']
+  ['', '', ''],
 ])
 
 const calculateWinner = (squares) => {
@@ -42,7 +42,7 @@ const resetGame = () => {
   board.value = [
     ['', '', ''],
     ['', '', ''],
-    ['', '', '']
+    ['', '', ''],
   ]
   player.value = 'X'
 }
@@ -52,7 +52,7 @@ const resetGame = () => {
   <main class="pt-8 text-center bg-gray-800 min-h-screen">
     <h1 class="mb-8 text-3xl font-bold uppercase">Tic Tac Toe (Tris)</h1>
 
-    <h3 class="text-xl mb-4">Turno di:  {{ player }}</h3>
+    <h3 class="text-xl mb-4">Turno di: {{ player }}</h3>
 
     <div class="flex flex-col items-center mb-8">
       <div v-for="(row, x) in board" :key="x" class="flex">
@@ -60,7 +60,20 @@ const resetGame = () => {
           v-for="(cell, y) in row"
           :key="y"
           @click="makeMove(x, y)"
-          :class="['border', 'border-white', 'w-20', 'h-20', 'hover:bg-gray-700', 'flex', 'items-center', 'justify-center', 'material-icons-outlined', 'text-4xl', 'cursor-pointer', cell === 'X' ? 'text-pink-500' : 'text-blue-500']"
+          :class="[
+            'border',
+            'border-white',
+            'w-20',
+            'h-20',
+            'hover:bg-gray-700',
+            'flex',
+            'items-center',
+            'justify-center',
+            'material-icons-outlined',
+            'text-4xl',
+            'cursor-pointer',
+            cell === 'X' ? 'text-pink-500' : 'text-blue-500',
+          ]"
         >
           {{ cell === 'X' ? 'close' : cell === 'O' ? 'circle' : '' }}
         </div>
@@ -80,5 +93,6 @@ const resetGame = () => {
 <style>
 .material-icons-outlined::before {
   font-family: 'Material Icons Outlined';
+  /* Rimuovi eventuali selettori errati qui */
 }
 </style>
