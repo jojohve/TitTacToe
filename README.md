@@ -1,15 +1,35 @@
-# Tic Tac Toe (Tris)
+# app
 
-Una semplice applicazione web di Tic Tac Toe (Tris) sviluppata con Vue.js e Tailwind CSS.
+This template should help get you started developing with Vue 3 in Vite.
 
-Questa applicazione permette a due giocatori di giocare al gioco del Tris. I giocatori alternano i loro turni per fare una mossa sulla griglia, 
-e il primo che riesce a allineare tre dei propri simboli (X o O) in una riga, colonna o diagonale vince la partita.
+## Recommended IDE Setup
 
-## Caratteristiche
-- Modalità a due giocatori
-- Interfaccia utente semplice e reattiva
-- Utilizzo di Vue.js per la gestione dello stato
-- Stili moderni grazie a Tailwind CSS
-  
-## Link per provare il gioco (in due è meglio!)
-https://tictactoe-tris-vue-js.netlify.app/
+[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+
+## Customize configuration
+
+See [Vite Configuration Reference](https://vite.dev/config/).
+
+## Project Setup
+
+```sh
+npm install
+```
+
+### Compile and Hot-Reload for Development
+
+```sh
+npm run dev
+```
+
+### Compile and Minify for Production
+
+```sh
+npm run build
+```
+
+### Lint with [ESLint](https://eslint.org/)
+
+```sh
+npm run lint
+```

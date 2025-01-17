@@ -2,7 +2,7 @@
 export const content = [
   "./index.html",
   "./src/**/*.{vue,js,ts,jsx,tsx}",
-  "./app/**/*.{vue,js,ts,jsx,tsx}" // Aggiungi questa riga se i tuoi file sono nella directory app
+  "./app/**/*.{vue,js,ts,jsx,tsx}"
 ];
 export const theme = {
   extend: {},
